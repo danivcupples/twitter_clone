@@ -10,7 +10,7 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" id="navigation">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -25,10 +25,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Moments</a></li>
-            <li><a href="#">Notifications</a></li>
-            <li><a href="#">Messages</a></li>
+            <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home<span class="sr-only">(current)</span></a></li>
+            <li><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i>
+Moments</a></li>
+            <li><a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</a></li>
+            <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> Messages</a></li>
           </ul>
           <ul class="nav navbar-nav">
             <li><i class="fa fa-twitter fa-2 tweetybird" aria-hidden="true"></i></li>
@@ -36,14 +37,14 @@
           <ul class="nav navbar-nav navbar-right">
             <li>
               <form class="navbar-form">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                  <button type="submit" class="btn btn-default">Submit</button>
+                <div class="form-group search">
+                  <input type="text" class="form-control" placeholder="Search Twitter">
+                  <i class="fa fa-search" aria-hidden="true"></i>
                 </div>
               </form>
             </li>
-            <li><a href="#">Profile</a></li>
-            <li><button type="submit" class="btn btn-default">Tweet</button></li>
+            <li><a href="#"><img src="https://images.unsplash.com/photo-1508109742312-c7d531211d11?auto=format&fit=crop&w=1050&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="me" class="img-circle img-responsive" id="nav-profile"></a></li>
+            <li><button type="submit" class="btn btn-default tweet-button">Tweet</button></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -51,7 +52,7 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-3 left-section">
           <div class="panel">
             <div class="panel panel-body">
               <div class="profile-background">
@@ -95,7 +96,7 @@
           </div>
         </div>
 
-        <div class="col-lg-6">
+        <div class="col-lg-6 main-section">
           <div class="panel main-body">
             <div class="panel panel-body tweet">
               <div class="row">
@@ -163,7 +164,7 @@
           </div>
         </div>
 
-        <div class="col-lg-3">
+        <div class="col-lg-3 right-section">
           <div class="panel panel-body">
             <h2>Who to Follow</h2>
             <ul>
