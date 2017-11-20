@@ -24,3 +24,80 @@ body {
   font-size: 21px;
   text-align: center;
 }
+
+.profile {
+  position: relative;
+  top: -10px;
+  line-height: .8%;
+}
+
+.profile-background {
+  background: purple;
+  height: 100px;
+  width: 113.5%;
+  position: relative;
+  left: -17px;
+  top: -17px;
+}
+
+.profile-picture {
+  border: 3px solid white;
+  position: relative;
+  top: -20px;
+}
+
+.followers {
+  margin: 0;
+}
+
+th {
+  margin: 10px;
+  padding: 5px 10px;
+  color: grey;
+  font-size: .9em;
+}
+
+td {
+  margin: 10px;
+  color: purple;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.panel.main-body {
+  margin: 0 auto;
+  border-bottom: 0.5px solid lightgrey;
+  padding-bottom: -20px;
+}
+
+.tweet {
+  background: #F4F8FB;
+  padding: 10px 20px 5px 20px;
+  margin-bottom: 0;
+}
+
+form {
+  border: none;
+  width: 500px:
+  border-radius: 5px;
+  height: 40px;
+}
+
+input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  height: 100%;
+  padding: 10px 10px;
+}
+
+.response {
+  color: grey;
+  border: none;
+  word-spacing: 50px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-size: 1.1em;
+  margin-bottom: -20px;
+}
