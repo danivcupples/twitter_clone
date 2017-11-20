@@ -135,6 +135,11 @@ input {
   padding: 10px 10px;
 }
 
+.handle {
+  color: grey;
+  font-weight: 300;
+}
+
 .response {
   color: grey;
   border: none;
