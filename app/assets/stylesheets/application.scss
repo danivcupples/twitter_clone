@@ -1,0 +1,171 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #e6ecf0;
+  color: #14171a;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  overflow-y: scroll;
+}
+
+#navigation {
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  height: 46px;
+  position: relative;
+  width: 100%;
+  background: #fff;
+}
+
+#navigation a {
+  color: purple;
+  font-size: 1.1em;
+}
+
+.tweetybird {
+  color: #1da1f2;
+  font-size: 21px;
+  position: relative;
+  top: 15px;
+  left: 150px;
+}
+
+.search input {
+  border-radius: 20px;
+  width: 400px;
+  background: #F4F8FB;
+  margin-right: -15px;
+}
+
+.search i {
+  positon: relative;
+  margin-left: -30px;
+  font-weight: lighter;
+  color: grey;
+}
+
+#nav-profile {
+  width: 35px;
+}
+
+.tweet-button {
+  background: purple;
+  color: white;
+  border-radius: 20px;
+  margin-top: 8px;
+  padding: 6px 20px;
+  margin-right: 30px;
+  margin-bottom: 5px;
+}
+
+.profile {
+  position: relative;
+  top: -10px;
+  line-height: .8%;
+}
+
+.profile-background {
+  background: purple;
+  height: 100px;
+  width: 113.5%;
+  position: relative;
+  left: -17px;
+  top: -17px;
+}
+
+.profile-picture {
+  border: 3px solid white;
+  position: relative;
+  top: -20px;
+}
+
+.followers {
+  margin: 0;
+}
+
+th {
+  margin: 10px;
+  padding: 5px 10px;
+  color: grey;
+  font-size: .9em;
+}
+
+td {
+  margin: 10px;
+  color: purple;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.left-section {
+  margin-left: 20px;
+}
+
+.main-section {
+  margin: 0px -20px;
+}
+
+.panel.main-body {
+  margin: 0 auto;
+  border-bottom: 0.5px solid lightgrey;
+  padding-bottom: -20px;
+}
+
+.tweet {
+  background: #F4F8FB;
+  padding: 10px 20px 5px 20px;
+  margin-bottom: 0;
+}
+
+form {
+  border: none;
+  width: 500px;
+  border-radius: 5px;
+  height: 40px;
+}
+
+input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  height: 100%;
+  padding: 10px 10px;
+}
+
+.handle {
+  color: grey;
+  font-weight: 300;
+}
+
+.response {
+  color: grey;
+  border: none;
+  word-spacing: 50px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-size: 1.1em;
+  margin-bottom: -20px;
+}
