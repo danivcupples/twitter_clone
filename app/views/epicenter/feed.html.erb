@@ -1,22 +1,22 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-3 left-section">
-          <div class="panel">
-            <div class="panel panel-body">
+          <div class="well profile-card">
               <div class="profile-background">
 
               </div>
               <div class="row profile">
-                <div class="col-lg-4">
-                  <img src="https://images.unsplash.com/photo-1510123193946-4a9db885cbe5?auto=format&fit=crop&w=459&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="profile" class="img-circle img-responsive">
-                </div>
-                <div class="col-lg-8">
-                  <h3><%= current_user.name %></h3>
-                  <p>@<%= current_user.username %></p>
-                </div>
+                  <div class="profile-image">
+                    <% if current_user.avatar.blank? == false %>
+                      <%= image_tag current_user.avatar.url, size:40, class: "img img-circle" %>
+                    <% end %>
+                  </div>
+                  <div class="profile-name">
+                    <h3><%= current_user.name %></h3>
+                    <p>@<%= current_user.username %></p>
+                  </div>
               </div>
               <div class="row followers">
-                <div class="col-lg-12">
                   <table>
                     <tr>
                       <th>Tweets</th>
@@ -24,64 +24,46 @@
                       <th>Followers</th>
                     </tr>
                     <tr>
-                      <td>44</td>
-                      <td>108</td>
+                      <td><%= current_user.tweets.count%></td>
+                      <td><%= current_user.following.count%></td>
                       <td>72</td>
                     </tr>
                   </table>
-                </div>
               </div>
-            </div>
           </div>
           <div class="panel">
-            <div class="panel panel-body">
-
+            <div class="well">
               <h2>Trends</h2>
-              <p>Topic</p>
-              <p>Topic</p>
-              <p>Topic</p>
+                <% @popular_tags.each do |tag| %>
+                  <p><%= tag.phrase %></p>
+                <% end %>
             </div>
           </div>
         </div>
 
         <div class="col-lg-6 main-section">
-          <div class="panel main-body">
-            <div class="panel panel-body tweet">
-              <div class="row">
-                <div class="col-lg-2">
-                  <img src="https://images.unsplash.com/photo-1510123193946-4a9db885cbe5?auto=format&fit=crop&w=459&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="profile" class="img-circle img-responsive">
-                </div>
-                <div class="col-lg-10">
-                  <form class="from-control" action="index.html" method="post">
-                    <input type="text" name="" value="" placeholder="What's happening?">
-                  </form>
-                </div>
-              </div>
-            </div>
+          <div class="well feed-form">
+              <p>
+                <%= render '/tweets/form', tweet: @tweet %>
+              </p>
           </div>
 
-          <% @following_tweets.each do |tweet| %>
-            <div class="panel main-body">
-              <div class="panel panel-body">
-                <div class="row">
-                  <div class="col-lg-2">
-                    <img src="https://images.unsplash.com/photo-1510123193946-4a9db885cbe5?auto=format&fit=crop&w=459&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="profile" class="img-circle img-responsive">
-                  </div>
-                  <div class="col-lg-10">
-                    <h5><b><%= tweet.user.name %></b> <span class="handle">@<%= tweet.user.username %> · *add time later* </span></h5>
-                    <p><%= tweet.message.html_safe %></p>
-                    <p class="response"><i class="fa fa-comment-o" aria-hidden="true"></i> <i class="fa fa-retweet" aria-hidden="true"></i> <i class="fa fa-heart-o" aria-hidden="true"></i>
-       <i class="fa fa-envelope-o" aria-hidden="true"></i>
-      </p>
-                  </div>
-                </div>
-              </div>
+          <% @following_tweets.reverse_each do |tweet| %>
+            <div class="well">
+              <p>
+                <% if tweet.user.avatar.blank? == false %>
+                  <%= image_tag tweet.user.avatar.url, size:30, class: "img img-circle" %>
+                <% end %>
+                <% tweet.user.name %>
+                <%= link_to "@#{tweet.user.username}", show_user_path(id: tweet.user.id)%>
+                • <%= time_ago_in_words(tweet.created_at) %>
+              </p>
+              <p><%= tweet.message.html_safe %></p>
+              <p class="response"><i class="fa fa-comment-o" aria-hidden="true"></i> <i class="fa fa-retweet" aria-hidden="true"></i> <i class="fa fa-heart-o" aria-hidden="true"></i>
+ <i class="fa fa-envelope-o" aria-hidden="true"></i>
+</p>
             </div>
           <% end %>
-
-
-
-
         </div>
 
 

@@ -1,19 +1,29 @@
 <h1>@<%= @user.username %>'s Profile & Tweets</h1>
-<p><%= @user.name %></p>
-<p><%= @user.location %></p>
-<p><%= @user.bio %></p>
+
+<h4><%= @user.name %></h4>
+<h4><%= @user.location %></h4>
+<h5><%= @user.bio %></h5>
+
 <p>
     <% if current_user.following.include?(@user.id) %>
         <%= link_to "Unfollow", unfollow_path(id: @user.id), class: "btn btn-danger" %>
     <% else %>
         <% if current_user.id != @user.id %>
-        <%= link_to "Follow", now_following_path(id: @user.id), class: "btn btn-primary" %>
-    <% end %>
+          <%= link_to "Follow", now_following_path(id: @user.id), class: "btn btn-primary" %>
+        <% end %>
     <% end %>
 </p>
-<% @user.tweets.each do |tweet| %>
-    <div>
-        <p>@<%= @user.username %></p>
-    <p><%= tweet.message %></p>
+
+<% @user.tweets.reverse_each do |tweet| %>
+    <div class="well">
+        <p>
+          <% if @user.avatar.blank? == false %>
+            <%= image_tag @user.avatar.url, size:30, class: "img img-circle" %>
+          <% end %>
+          <%= tweet.user.name %>
+          <%= link_to "@#{tweet.user.username}", show_user_path(id: tweet.user.id)%>
+          • <%= time_ago_in_words(tweet.created_at) %>
+        </p>
+    <p><%= tweet.message.html_safe %></p>
     </div>
 <% end %>

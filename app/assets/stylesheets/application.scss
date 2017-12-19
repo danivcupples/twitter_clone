@@ -10,8 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
 @import "bootstrap-sprockets";
@@ -61,6 +59,7 @@ body {
 
 .search i {
   positon: relative;
+  top: 10px;
   margin-left: -30px;
   font-weight: lighter;
   color: grey;
@@ -68,6 +67,8 @@ body {
 
 #nav-profile {
   width: 35px;
+  position: relative;
+  top: -10px;
 }
 
 .tweet-button {
@@ -80,29 +81,34 @@ body {
   margin-bottom: 5px;
 }
 
+.well.profile-card {
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  height: 180px;
+}
+
 .profile {
   position: relative;
   top: -10px;
   line-height: .8%;
 }
 
-.profile-background {
-  background: purple;
-  height: 100px;
-  width: 113.5%;
-  position: relative;
-  left: -17px;
-  top: -17px;
+.profile-image {
+  float: left;
+  margin: 20px 20px;
+}
+
+.profile-name {
+  float: left;
 }
 
 .profile-picture {
-  border: 3px solid white;
-  position: relative;
-  top: -20px;
+  margin: 0 10px;
+  float: left;
 }
 
 .followers {
-  margin: 0;
+  float: left;
 }
 
 th {
@@ -128,31 +134,33 @@ td {
   margin: 0px -20px;
 }
 
-.panel.main-body {
+.well {
   margin: 0 auto;
   border-bottom: 0.5px solid lightgrey;
-  padding-bottom: -20px;
+  background: #fff;
+  padding-bottom: 30px;
 }
 
-.tweet {
-  background: #F4F8FB;
-  padding: 10px 20px 5px 20px;
-  margin-bottom: 0;
+.feed-form {
+  padding-bottom: 20px;
+  display: inline-block;
+  width: 100%;
 }
 
-form {
+.tweet-box {
   border: none;
-  width: 500px;
+  width: 62%;
   border-radius: 5px;
   height: 40px;
+  float: left;
 }
 
-input {
-  width: 100%;
+.actions {
+  width: 25%;
   border-radius: 5px;
-  border: 1px solid lightgrey;
-  height: 100%;
-  padding: 10px 10px;
+  border: 1px;
+  float: right;
+  margin-left: 10px;
 }
 
 .handle {
@@ -168,4 +176,33 @@ input {
   padding-bottom: 0px;
   font-size: 1.1em;
   margin-bottom: -20px;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
 }

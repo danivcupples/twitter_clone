@@ -1,5 +1,20 @@
 class EpicenterController < ApplicationController
+
+  def tag_tweets
+    @tag = Tag.find(params[:id])
+  end
+
+  def tag
+    @popular_tags = []
+
+    Tag.all.each do |tag|
+      @popular_tags.push(tag.phrase)
+    end
+  end
+
   def feed
+    @tweet = Tweet.new
+
     @following_tweets = []
 
     Tweet.all.each do |tweet|

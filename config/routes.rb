@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'epicenter#feed'
 
   get 'show_user' => 'epicenter#show_user'
@@ -7,9 +8,10 @@ Rails.application.routes.draw do
 
   get 'unfollow' => 'epicenter#unfollow'
 
+  get 'tag_tweets' => 'epicenter#tag_tweets'
+
   resources :tweets
   devise_for :users
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

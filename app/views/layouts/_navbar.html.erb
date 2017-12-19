@@ -1,0 +1,52 @@
+<nav class="navbar navbar-default" id="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><i class="fa fa-home" aria-hidden="true"></i><%= link_to "Home", root_path, class: "navbar-brand" %><span class="sr-only">(current)</span></li>
+            <li><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i>
+Moments</a></li>
+            <li><a href="#"><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</a></li>
+            <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> Messages</a></li>
+          </ul>
+          <ul class="nav navbar-nav">
+            <li><i class="fa fa-twitter fa-2 tweetybird" aria-hidden="true"></i></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li>
+              <form class="navbar-form">
+                <div class="form-group search">
+                  <input type="text" class="form-control" placeholder="Search Twitter">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+              </form>
+            </li> -->
+            <% if user_signed_in? %>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <% if current_user.avatar.blank? == false %>
+                    <%= image_tag current_user.avatar.url, size:25, class: "img img-circle" %>
+                  <% end %>
+                  @<%= current_user.username %> <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+              <% end %>
+            <li><%= link_to "Tweet", new_tweet_path %></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
