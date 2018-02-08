@@ -1,0 +1,11 @@
+<h1>Trending Tags</h1>
+
+<div>
+  <%@trending_tags.phrase.order(created_at: :desc).each do |phrase|%>
+    <div class="well">
+      <p>
+        <%= link_to "##{phrase}", tag_tweets_path(id: tag.id)%>
+      </p>
+    </div>
+  <% end %>
+</div>
