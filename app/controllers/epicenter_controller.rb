@@ -5,10 +5,10 @@ class EpicenterController < ApplicationController
   end
 
   def tag
-    @popular_tags = []
+    @trending_tags = []
 
     Tag.all.each do |tag|
-      @popular_tags.push(tag.phrase)
+      @trending_tags.push(tag.phrase)
     end
   end
 
